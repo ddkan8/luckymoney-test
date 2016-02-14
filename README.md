@@ -21,3 +21,6 @@ node luckymoney.js 100 20 6 > data.json
 其实不同结果只是最大值的取值问题，最小值固定不变
 
 修改luckymoney.js 23到25行即可
+
+
+![image](https://raw.githubusercontent.com/liujin834/luckymoney-test/master/chart.png)
