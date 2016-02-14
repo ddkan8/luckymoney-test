@@ -24,7 +24,7 @@ function getAmount(money,num){
     var maxMoneyS2 = (money/num) * num - 1;
     var maxMoneyS3 = (money/num) * (num * 0.5);
 
-    var max = parseFloat(maxMoneyS3.toFixed(2));
+    var max = parseFloat(maxMoneyS1.toFixed(2));
     var min = 0.01;
 
     return parseFloat( ((Math.random() * (max * 100 - min * 100)) / 100).toFixed(2) );
