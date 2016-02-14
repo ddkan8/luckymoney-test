@@ -3,18 +3,28 @@
  */
 var fs = require('fs');
 
-var total = 100;
-var num = 20;
+var argv = process.argv;
+argv.shift(argv);
+argv.shift(argv);
+
+var v1 = argv.shift(argv);
+var v2 = argv.shift(argv);
+var v3 = argv.shift(argv);
+
+var total = v1 ? v1 : 100;
+var num = v2 ? v2 : 20;
+var execTimes = v3 ? v3 : 5;
 
 function getAmount(money,num){
 
-    num = parseFloat(num.toFixed(2));
+    money = parseFloat(money);
+    num = parseInt(num);
 
     var maxMoneyS1 = (money/num) * 2;
     var maxMoneyS2 = (money/num) * num - 1;
     var maxMoneyS3 = (money/num) * (num * 0.5);
 
-    var max = parseFloat(maxMoneyS1.toFixed(2));
+    var max = parseFloat(maxMoneyS3.toFixed(2));
     var min = 0.01;
 
     return parseFloat( ((Math.random() * (max * 100 - min * 100)) / 100).toFixed(2) );
@@ -56,7 +66,7 @@ function testAmount(money,num){
     return amounts;
 }
 console.log("[");
-var times = 10;
+var times = execTimes;
 for( var i= 1; i <= times; i ++){
     console.log('{"name":"'+i+'",');
     console.log('"data":');
